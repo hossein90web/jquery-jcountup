@@ -22,14 +22,14 @@ $.fn.jCountUp = function(options) {
       tmp -= 1;
       $(el).text(tmp);
     }
-
+    
     if (options.val === c) {
       options.callback.call(el); // execute callback function.
     }
   };
-
+  
   for (; i < options.val; i += 1) {
-    $(this).fadeTo(options.speed, 1, function() { // ugly sleep hack.
+    $(this).fadeTo(options.speed, 1, function() { // ugly sleep hack since setTimeout() isn't working correctly here.
       c += 1;
       update(this, c);
     });
