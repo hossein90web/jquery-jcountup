@@ -6,31 +6,31 @@
  * link: http://qvister.se
  */
 (function($) {
-$.fn.jCountUp = function(args) {
-  var tmp;
-  var i = 0;
-  var c = 0;
-  var defaults = { val: 10, speed: 50, up: true, callback: function() {} }; // default arguments.
-  var settings = $.extend(defaults, args); // merge defaults with submitted arguments.
-  var update = function(el, c) { // update the value of the element.
+$.fn.jCountUp = function(options) {
+  var i, c, tmp, defaults, update;
+  i = 0;
+  c = 0;
+  defaults = { val: 10, speed: 50, up: true, callback: function() {} }; // default arguments.
+  options = $.extend(defaults, options); // merge defaults with submitted arguments.
+  update = function(el, c) { // update the value of the element.
     tmp = parseInt($(el).text(), 10);
-
-    if (settings.up) { // count up.
-      tmp++;
+    
+    if (options.up) { // count up.
+      tmp += 1;
       $(el).text(tmp);
     } else { // count down.
-      tmp--;
+      tmp -= 1;
       $(el).text(tmp);
     }
 
-    if (settings.val == c) {
-      settings.callback.call(el); // execute callback function.
+    if (options.val === c) {
+      options.callback.call(el); // execute callback function.
     }
   };
 
-  for (; i < settings.val; i++) {
-    $(this).fadeTo(settings.speed, 1, function() { // ugly sleep hack.
-      c++;
+  for (; i < options.val; i += 1) {
+    $(this).fadeTo(options.speed, 1, function() { // ugly sleep hack.
+      c += 1;
       update(this, c);
     });
   }
