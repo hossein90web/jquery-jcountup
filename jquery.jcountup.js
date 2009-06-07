@@ -17,11 +17,11 @@ $.fn.jCountUp = function(options) {
     
     if (options.up) { // count up.
       tmp += 1;
-      $(el).text(tmp);
     } else { // count down.
       tmp -= 1;
-      $(el).text(tmp);
     }
+    
+    $(el).text(tmp);
     
     if (options.val === c) {
       options.callback.call(el); // execute callback function.
