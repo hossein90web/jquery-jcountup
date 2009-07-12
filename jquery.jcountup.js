@@ -11,8 +11,7 @@
 (function($) {
     $.fn.jCountUp = function(options) {
         var c, defaults, i, tmp, update;
-        i = 0;
-        c = 0;
+        i = c = 0;
         defaults = { val: 10, speed: 50, up: true, callback: function() {} }; // default arguments.
         options = $.extend(defaults, options); // merge defaults with submitted arguments.
         update = function(el, c) { // update the value of the element.
