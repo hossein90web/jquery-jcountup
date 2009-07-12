@@ -1,11 +1,11 @@
-/**
+/*
  * jQuery jCountUp Plugin
  *
  * version: 1.0
  * author: Anton Lindqvist <anton@qvister.se>
  * link: http://qvister.se
  *
- * Examples and documentation: https://github.com/mptre/jquery-jcountup/
+ * Examples and documentation: http://github.com/mptre/jquery-jcountup/
  */
 
 (function($) {
